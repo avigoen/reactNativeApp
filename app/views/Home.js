@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Header from '../sections/Header'
+import Hero from '../sections/Hero'
 
 export default class Home extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ export default class Home extends Component {
         return (
             <View style={styles.container}>
                 <Header message="Press to Login" />
-                <Text style={{ flex: 8 }}>This will be homepage</Text>
+                <Hero />
                 <Text style={{ flex: 6 }}>These other lines are here</Text>
             </View>
         );
