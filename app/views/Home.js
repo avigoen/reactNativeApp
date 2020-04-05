@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Header from '../sections/Header'
 import Hero from '../sections/Hero'
+import Menu from '../sections/Menu'
 
 export default class Home extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ export default class Home extends Component {
             <View style={styles.container}>
                 <Header message="Press to Login" />
                 <Hero />
-                <Text style={{ flex: 6 }}>These other lines are here</Text>
+                <Menu />
             </View>
         );
     }
