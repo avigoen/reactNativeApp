@@ -4,6 +4,7 @@ import Contact from './app/views/Contact'
 import Video from './app/views/Video'
 import VideoDetail from './app/views/VideoDetail'
 import Regiser from './app/views/Register'
+import Login from './app/views/Login'
 
 import { StackNavigator } from 'react-navigation'
 
@@ -23,6 +24,9 @@ const MyRoutes = StackNavigator(
     },
     RegisterRT: {
       screen: Regiser
+    },
+    LoginRT: {
+      screen: Login
     }
   },
   {
