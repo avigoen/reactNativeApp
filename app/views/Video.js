@@ -21,6 +21,7 @@ export default class Video extends Component {
     }
 
     render() {
+        const { navigate } = this.props.navigation
         return (
             <View>
                 <View style={{ paddingTop: 30 }}>
@@ -28,6 +29,7 @@ export default class Video extends Component {
                         <FlatList
                             data={this.state.videoList}
                             renderItem={({ item }) => <TubeItem
+                                navigate={navigate}
                                 id={item.id.videoId}
                                 title={item.snippet.title}
                                 imageSrc={item.snippet.thumbnails.high.url}
@@ -45,7 +47,7 @@ export default class Video extends Component {
 
 export class TubeItem extends Component {
     onPress = () => {
-        console.log(this.props.id)
+        this.props.navigate('VideoDetailRT', { ytubeId: this.props.id });
     }
 
     render() {
