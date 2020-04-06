@@ -7,9 +7,9 @@ export default class Contact extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            meg: "Enter Message",
-            name: "Enter Name",
-            email: "Enter your Email Address"
+            meg: "",
+            name: "",
+            email: ""
         }
     }
 
@@ -25,21 +25,30 @@ export default class Contact extends Component {
     }
 
     render() {
+        const { navigate } = this.props.navigation
         return (
             <View style={styles.container}>
-                <Header message="Press To Login"></Header>
+                <Header navigate={navigate} message="Press To Login"></Header>
                 <Text style={styles.heading}>Contact Us</Text>
 
                 <TextInput
                     style={styles.inputs}
                     onChangeText={(text) => this.setState({ name: text })}
+                    placeholder={"Enter Name"}
                     value={this.state.name}
+                />
+                <TextInput
+                    style={styles.inputs}
+                    onChangeText={(text) => this.setState({ email: text })}
+                    placeholder={"Enter your Email Address"}
+                    value={this.state.email}
                 />
                 <TextInput
                     style={styles.multiInput}
                     onChangeText={(text) => this.setState({ msg: text })}
                     value={this.state.msg}
                     multiline={true}
+                    placeholder={"Enter Message"}
                     numberOfLines={4}
                 />
 
